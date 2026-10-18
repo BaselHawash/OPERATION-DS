@@ -107,7 +107,30 @@ if(InvalidDeletePosition){
         }
         return false;
     }
+    
+// this methode will let u use old one + new one with bigger size
+int[] Enlarge(int newsize){
+        int[] newArray=new int [newsize];
+        if (newsize> items.length){
+            for (int i=0,j=0;i< items.length;i++,j++)
+                newArray[j]=items[i];
+            return newArray;
+        }else
+            return items
+}
 
+    
+// thie metode will replace old one with new one mean u will use one array the new one
+void Enlarger2(int newSize){
+        int[] newArray2=new int[newSize];
+        if (newSize>items.length){
+            for (int i = 0; i <count; i++) {
+
+                newArray2[i]=items[i];
+            }
+            items=newArray2;
+        }
+}
 
 }
  
