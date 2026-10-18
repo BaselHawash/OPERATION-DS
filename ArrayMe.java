@@ -51,7 +51,7 @@ public class ArrayMe {
 
     void Insert(int pos, int item) {
 
-        if (isInvalidPos(pos)) {
+        if (isInvalidInsertPos(pos)) {
             return;
         }
         if (isFull()) {
@@ -67,7 +67,9 @@ public class ArrayMe {
 // this methode to delete item by position bc we in array if we use by item or date  we will delete multi data if there  are the same 
 
     void Delete(int pos) {
-
+if(InvalidDeletePosition){
+    return;
+}
 
         for (int i = pos; i < count - 1; i++) {
             items[i] = items[i + 1];
@@ -89,13 +91,23 @@ public class ArrayMe {
 
 
     // this methode for check is the position available in array
-    boolean isInvalidPos(int pos) {
-        if (pos < 0 || pos > count) {
-            IO.println("Invalid position: " + pos);
+ 
+    boolean InvalidInsertPosition(int pos){
+        if (pos<0||pos>count){
+            IO.println("Invalid position");
             return true;
         }
         return false;
     }
+    // this methode for delete bc if we make in vadlid pos it will delte (using invalidInsertpos), i edit invalidInsertpos to new one can work with deletion bc old one delete if we add invalid postion its delete last one
+    boolean InvalidDeletePosition(int pos){
+        if (pos<0||pos>=count){
+            IO.println("Invalid position");
+            return true;
+        }
+        return false;
+    }
+
 
 }
  
